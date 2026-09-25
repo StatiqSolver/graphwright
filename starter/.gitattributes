@@ -1,0 +1,21 @@
+# Normalize line endings: LF in the repo and in every working tree, on every OS.
+# Without this, a Windows checkout plus `git commit -a` can silently flip
+# thousands of files to CRLF in one commit.
+* text=auto eol=lf
+
+# Windows-only launchers need CRLF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary assets: never diff or normalize.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.wasm binary
+*.woff binary
+*.woff2 binary
+*.zip binary

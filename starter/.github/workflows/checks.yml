@@ -1,0 +1,46 @@
+# The one required gate. It runs exactly the command agents run locally, so
+# "passes locally" and "passes in CI" mean the same thing (AGENTS.md "Checks").
+# The job name `checks` is the status context the main-protection ruleset requires:
+# renaming the job silently un-requires it.
+name: checks
+
+# Never add workflow-level `paths:` filters or a job-level `if:` that can skip this
+# job on a mergeable PR. A required check that never runs leaves PRs stuck, and a
+# job GitHub reports as "skipped" satisfies the ruleset exactly like a pass. If some
+# changes (docs only) need no work, run the steps as no-ops and still report success.
+on:
+  pull_request:
+    # `edited` re-runs when a PR's base branch is retargeted (a new diff);
+    # `ready_for_review` guarantees a run when a draft becomes mergeable.
+    types: [opened, synchronize, reopened, ready_for_review, edited]
+  push:
+    branches: [main]
+  merge_group:
+  workflow_dispatch:
+
+concurrency:
+  group: checks-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      # FILL at bootstrap: toolchain setup for the chosen stack, with caching, e.g.
+      #   - uses: actions/setup-node@v5
+      #     with: { node-version-file: .nvmrc, cache: npm }
+      #   - run: npm ci
+
+      - name: Gates
+        # FILL: replace with the single gates command (e.g. `npm run gates`, `just gates`).
+        # Until then this fails on purpose: an unconfigured gate must never look green.
+        run: |
+          echo "::error::The gates command is not configured yet (see AGENTS.md 'Checks')."
+          exit 1

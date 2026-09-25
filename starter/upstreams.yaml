@@ -1,0 +1,28 @@
+# upstreams.yaml — the single authority for every open-source project we build on.
+#
+# Rules (AGENTS.md truth rule 5):
+#   - An upstream gets an entry here BEFORE its code lands, with license and pin.
+#   - `pinned` is a tag or full commit SHA, never a floating branch.
+#   - The core never imports an upstream directly; `adapter` is the only door.
+#   - Bumping `pinned` is its own PR, and the adapter's contract tests must pass.
+#   - Release manifests copy their pins from here; nothing else records versions.
+schema_version: 1
+license_policy: docs/decisions/<nnnn>-license-policy.md   # owner decision at bootstrap
+
+upstreams: []
+# Example entry (delete once real entries exist):
+#  - id: example-kernel
+#    name: Example Kernel
+#    repo: https://github.com/<org>/<repo>
+#    license: MIT                      # SPDX id, read from the upstream's LICENSE file
+#    license_checked: 2026-01-01 by <agent/runtime id>, LICENSE at <pinned>
+#    pinned: v1.2.3                    # or a 40-char commit SHA
+#    mode: package                     # package | vendored | submodule | subprocess | service
+#    distributed: true                 # does its code ship inside something users receive?
+#    used_by: [core, web, local]
+#    adapter: packages/adapters/example-kernel/
+#    contract_tests: packages/adapters/example-kernel/contract.test.*
+#    known_answers: fixtures/example-kernel/   # inputs with independently known outputs
+#    health: {last_release: 2026-01-01, active_maintainers: 3, notes: ""}
+#    update_policy: "own PR per bump; contract tests + known answers must pass"
+#    chosen_because: "<one line>; alternatives considered: <names>"

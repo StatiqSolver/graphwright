@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "status": "template_not_built",
+  "task_ref": "<task>@<revision>",
+  "source_snapshot_manifest": null,
+  "builder_revision": null,
+  "policy_revision": null,
+  "access_scope": {
+    "project_id": "<project-id>",
+    "tenant_id": "<tenant-if-applicable>",
+    "provider_destination": "<approved-destination>"
+  },
+  "mandatory_sections": [
+    "objective",
+    "acceptance",
+    "authority",
+    "baseline",
+    "shared_contracts",
+    "critical_counterexamples",
+    "capabilities",
+    "budget"
+  ],
+  "retrieval": {
+    "seed_refs": [],
+    "allowed_edge_types": [
+      "DEPENDS_ON",
+      "SUPPORTED_BY",
+      "CONTRADICTS",
+      "SUPERSEDES",
+      "EVALUATES"
+    ],
+    "max_expansion_hops": 2,
+    "token_budget": null,
+    "critical_dependency_check": "required"
+  },
+  "included_refs": [],
+  "conflicts": [],
+  "missing_required_refs": [],
+  "omissions": [
+    {
+      "ref": "<omitted-reference>",
+      "reason": "<why-omitted>",
+      "retrieval_route": "<bounded-follow-up-route>"
+    }
+  ],
+  "sufficient_to_start": false,
+  "packet_hash": null
+}

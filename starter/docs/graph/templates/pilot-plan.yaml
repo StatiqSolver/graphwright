@@ -1,0 +1,47 @@
+schema_version: 1
+status: draft
+execution_authorized: false
+hypothesis: "<named-continuity-or-quality-problem-to-improve>"
+baseline_process: "<best-current-lightweight-alternative>"
+adoption_mode: shadow_then_one_packet
+comparison:
+  task_families: []
+  pinned_model_and_tool_versions: null
+  approved_rubric_revision: null
+  matched_scope_method: null
+  carryover_and_order_controls: null
+illustrative_limits:
+  max_packets: 3
+  max_concurrent_writers: 1
+  max_agent_starts_total: 12
+  max_repair_rounds_per_packet: 2
+  global_limit_can_stop_early: true
+required_limits_to_fill:
+  max_wall_clock_seconds: null
+  max_provider_usage: null
+  max_tool_calls: null
+  max_graph_updates: null
+  missing_required_limit: refuse_to_start
+failure_injections:
+  - interrupted_after_candidate
+  - interrupted_after_evaluation
+  - candidate_changed_after_review
+  - stale_input_revision
+  - failed_worker_not_counted_as_negative_result
+  - unresolved_dependency
+  - expired_lease_with_late_result
+  - ambiguous_external_effect_in_sandbox
+metrics:
+  - accepted_scope_and_qualification
+  - total_usage_by_provider_and_token_class
+  - fresh_session_recovery_effort
+  - repeated_investigation
+  - human_interventions
+  - escaped_defects
+  - false_completion_or_wrong_revision_acceptance
+publication:
+  push: false
+  merge: false
+  deploy: false
+  external_mutation: false
+interpretation: "Feasibility pilot; not a statistically strong productivity claim."

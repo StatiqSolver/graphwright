@@ -1,0 +1,18 @@
+# Starter label set. Keep it small: add a label only when a view or a rule needs it.
+# Create or update each with:  gh label create "<name>" --color <color> --description "<description>" --force
+- {name: P0, color: b60205, description: "Broken or unsafe for users; drop everything"}
+- {name: P1, color: d93f0b, description: "Serious; fix before the next release"}
+- {name: P2, color: fbca04, description: "Real, can wait"}
+- {name: P3, color: c2e0c6, description: "Minor"}
+- {name: known-gap, color: 5319e7, description: "Shipped incomplete; the register of what the product doesn't do yet"}
+- {name: needs:decision, color: d876e3, description: "Waiting on an owner decision"}
+- {name: deferred, color: bfdadc, description: "Owner-deferred; a comment names the reopen trigger"}
+- {name: "tier:critical", color: 000000, description: "Hardest review (AGENTS.md Good enough)"}
+- {name: "tier:user-facing", color: 555555, description: "Standard review"}
+- {name: "tier:internal", color: aaaaaa, description: "Behind the scenes: tests, scripts, CI, docs"}
+- {name: from-review, color: 0e8a16, description: "Filed from a review finding"}
+- {name: process, color: 1d76db, description: "A problem with how we work, not with the product"}
+- {name: upstream, color: 006b75, description: "About an open-source project we build on"}
+# [Later: when the independent-review check exists]
+# - {name: "review: single-vendor", color: fef2c0, description: "Second reviewer unavailable; reviewed by one vendor only"}
+# - {name: unreviewed, color: e11d21, description: "Reviews switched off by the owner; never auto-merges"}

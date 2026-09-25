@@ -1,0 +1,56 @@
+schema_version: 1
+id: "<project>:P001"
+revision: 1
+status: draft
+execution_authorized: false
+objective: "<one-coherent-observable-outcome>"
+authority_ref: "<approved-requirement-ref-and-revision>"
+base_manifest: "<immutable-multi-repo-or-single-repo-manifest>"
+prerequisites:
+  - ref: "<contract-or-task-id>"
+    required_gate: verified
+    required_revision: "<exact-version>"
+change_scope:
+  components: []
+  worktree: "<isolated-worktree>"
+  allowed_paths: []
+  protected_paths:
+    - "<trusted-policy-directory>"
+    - "<held-out-evaluation-directory>"
+  shared_resources: []
+  writer_limit: 1
+acceptance:
+  - id: AC-01
+    outcome: "<expected-behavior>"
+    evidence_class: integration
+    verification_command_ref: "<registered-command-id>"
+    independent_expected_result_ref: "<fixture-or-oracle-ref>"
+  - id: AC-02
+    outcome: "<observable-user-journey>"
+    evidence_class: application
+    verification_command_ref: "<registered-command-id>"
+open_external_gates: []
+known_counterexamples: []
+non_goals: []
+limits:
+  max_repair_rounds: 2
+  max_agent_starts: 4
+  max_model_calls: null
+  max_tool_calls: null
+  max_wall_clock_seconds: null
+  max_reported_tokens: null
+  max_provider_cost: null
+  missing_required_limit: refuse_to_start
+capabilities:
+  network_allowlist: []
+  external_mutation: false
+  publish: false
+  modify_rubric: false
+returns:
+  - candidate_identity
+  - diff_and_input_fingerprint
+  - observed_verification_receipts
+  - independent_review_record
+  - unresolved_gates
+  - actual_usage_or_explicit_unknown
+  - restart_note

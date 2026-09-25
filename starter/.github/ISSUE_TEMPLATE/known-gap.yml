@@ -1,0 +1,36 @@
+name: Known gap
+description: Something shipped incomplete. The register of what the product doesn't do yet.
+labels: ["known-gap"]
+body:
+  - type: textarea
+    id: gap
+    attributes:
+      label: What the product doesn't do yet
+      description: In user terms.
+    validations:
+      required: true
+  - type: input
+    id: shipped_in
+    attributes:
+      label: Shipped in (PR)
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What a user sees meanwhile
+    validations:
+      required: true
+  - type: dropdown
+    id: disposition
+    attributes:
+      label: Disposition
+      options:
+        - fix next
+        - deferred until a trigger (name it below)
+        - won't fix (owner decision)
+    validations:
+      required: true
+  - type: input
+    id: trigger
+    attributes:
+      label: Reopen / fix trigger
+      description: A concrete event, e.g. "first paying user", "before public launch", "upstream releases v2".

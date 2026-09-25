@@ -1,0 +1,38 @@
+schema_version: 1
+id: "<rubric-id>"
+revision: 1
+status: draft
+approved_by: null
+candidate_identity_required: true
+allowed_outcomes: [pass, fail, unrun, blocked, inconclusive]
+criteria:
+  - id: CORRECTNESS
+    question: "Does the candidate satisfy the approved behavior?"
+    required_evidence: [criterion_link, actual_result, expected_result]
+  - id: IDENTITY_AND_FRESHNESS
+    question: "Do all conclusions refer to the correct source and version?"
+    required_evidence: [input_manifest, stale_case, wrong_source_case]
+  - id: INTEGRATION
+    question: "Does the combined user journey work, not just isolated modules?"
+    required_evidence: [combined_manifest, application_replay]
+  - id: RECOVERY
+    question: "Can interruption resume without lost work or unsafe replay?"
+    required_evidence: [interruption_case, restart_receipt]
+  - id: PERMISSIONS
+    question: "Were capabilities and data boundaries respected?"
+    required_evidence: [policy_revision, observed_tool_record]
+  - id: COVERAGE
+    question: "Are skipped, unsupported, and live-gated cases visible?"
+    required_evidence: [coverage_register, unresolved_gates]
+review_record_requires:
+  - criterion_id
+  - candidate_identity
+  - observed_outcome
+  - reproduction_or_source_reference
+  - severity_and_scope
+  - required_change_or_reason_for_acceptance
+rules:
+  skip_is_pass: false
+  prose_is_execution_evidence: false
+  worker_may_relax_rubric: false
+  changed_candidate_requires_reassessment: true

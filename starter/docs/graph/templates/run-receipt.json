@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "status": "template_not_executed",
+  "project_id": "<project-id>",
+  "task_ref": "<task-id>@<revision>",
+  "attempt_id": "<unique-attempt-id>",
+  "lease": {
+    "holder": "<runner-id>",
+    "fencing_token": null
+  },
+  "input_manifest": "<immutable-reference>",
+  "context_packet_hash": null,
+  "policy_revision": null,
+  "runtime": {
+    "provider": null,
+    "actual_model": null,
+    "agent_version": null,
+    "tool_versions": {},
+    "environment_ref": null
+  },
+  "candidate": {
+    "base_manifest": null,
+    "result_manifest": null,
+    "patch_hash": null,
+    "artifact_refs": []
+  },
+  "commands": [],
+  "evaluations": [],
+  "completion": {
+    "implemented": "unrun",
+    "automated_verification": "unrun",
+    "domain_qualification": "unrun",
+    "user_qualification": "unrun",
+    "release_authorization": "not_granted",
+    "current_applicability": "unknown"
+  },
+  "usage": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "cache_read_tokens": null,
+    "cache_write_tokens": null,
+    "agent_starts": 0,
+    "tool_calls": 0,
+    "wall_clock_seconds": null,
+    "cost": null,
+    "currency": null,
+    "estimated_fields": []
+  },
+  "open_questions": [],
+  "next_safe_action": "<action-or-reason-to-stop>"
+}

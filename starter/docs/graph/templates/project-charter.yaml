@@ -1,0 +1,41 @@
+schema_version: 1
+status: draft
+execution_authorized: false
+project:
+  id: "<stable-project-id>"
+  name: "<project-name>"
+  owner: "<accountable-owner>"
+  primary_user: "<who-the-product-serves>"
+  core_journey: "<observable-end-to-end-user-outcome>"
+  non_goals: []
+  supported_envelope: []
+  explicitly_unsupported: []
+authority:
+  requirements: "<approved-spec-or-tracker-reference>"
+  code_identity: "<repository-and-release-manifest>"
+  policy: "<trusted-policy-reference-and-revision>"
+  evidence: "<run-evidence-store>"
+  graph_role: derived_index
+baseline:
+  adopted_manifest: null
+  local_work_preserved: false
+  known_failures: []
+  open_qualification_gates: []
+quality:
+  acceptance_owner: "<owner>"
+  required_rubric_revision: null
+  critical_invariants: []
+  observed_user_outcome: "<what-will-be-observed>"
+permissions:
+  external_source_mutation: false
+  remote_push: false
+  merge: false
+  deploy: false
+  purchase: false
+  approved_provider_destinations: []
+  data_classification_policy: "<policy-reference>"
+bootstrap_exit:
+  - baseline_and_local_work_preserved
+  - reproducible_verification_path
+  - explicit_failure_and_scope_register
+  - successful_fresh_context_handoff

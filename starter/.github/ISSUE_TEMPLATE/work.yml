@@ -1,0 +1,43 @@
+name: Work item
+description: One observable outcome that an agent can build and prove.
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: One coherent, observable outcome. If it needs "and", it is probably two issues.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance
+      description: Each criterion names the evidence that will prove it (named test, known-answer fixture, browser journey, screenshot, deployed check).
+      placeholder: |
+        - [ ] AC-1: <behavior> — evidence: <named test / journey / screenshot>
+        - [ ] AC-2: ...
+    validations:
+      required: true
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: Non-goals
+      description: What this deliberately does not do.
+  - type: textarea
+    id: scope
+    attributes:
+      label: Where the change goes
+      description: Components or paths it may touch, and anything it must not touch.
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Review tier (AGENTS.md "Good enough")
+      options:
+        - behind-the-scenes
+        - user-facing
+        - critical
+  - type: textarea
+    id: context
+    attributes:
+      label: Read first
+      description: Files, contracts, decisions and earlier issues a worker needs, and anything deliberately left out. Dependencies go in GitHub's "blocked by" field, not here.

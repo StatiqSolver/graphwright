@@ -1,0 +1,101 @@
+{
+  "checked_on": "2026-09-16",
+  "sources": [
+    {
+      "id": "D1",
+      "type": "Anchor document",
+      "title": "Graph Engineering: The Karpathy Loop, Improved 1000x by Itself / The Anthropic Playbook",
+      "metadata": "User-supplied independent synthesis, July 2026; 11 pages.",
+      "url": "",
+      "note": "Primary conceptual anchor for this report. Its source note disclaims affiliation and endorsement. Historical counts, promotional multipliers, timing estimates, and vendor limits are not treated as measured project outcomes."
+    },
+    {
+      "id": "R1",
+      "type": "Primary repository",
+      "title": "Karpathy: autoresearch",
+      "metadata": "Repository documentation; accessed 16 September 2026.",
+      "url": "https://github.com/karpathy/autoresearch",
+      "note": "Supports the bounded experiment surface, protected evaluation utilities, short evaluation loop, and retained/discarded candidate history. Does not establish general software-delivery productivity."
+    },
+    {
+      "id": "R2",
+      "type": "Primary engineering guidance",
+      "title": "Anthropic: Building effective agents",
+      "metadata": "Published December 2024; accessed 16 September 2026.",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "note": "Supports choosing simple composable workflows and distinguishing workflows from agents. Used here for architecture selection, not universal performance claims."
+    },
+    {
+      "id": "R3",
+      "type": "Primary engineering experiment",
+      "title": "Anthropic: Effective harnesses for long-running agents",
+      "metadata": "Published 26 November 2025; accessed 16 September 2026.",
+      "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+      "note": "Describes initialization, incremental coding, durable handoff artifacts, and application-level testing across context windows. Evidence is specific to the described experiments."
+    },
+    {
+      "id": "R4",
+      "type": "Primary engineering account",
+      "title": "OpenAI: Harness engineering",
+      "metadata": "Accessed 16 September 2026.",
+      "url": "https://openai.com/index/harness-engineering/",
+      "note": "Supports repository-accessible knowledge and mechanically enforced architecture. This is an engineering account, not a controlled benchmark of this report's proposed method."
+    },
+    {
+      "id": "R5",
+      "type": "Primary cookbook",
+      "title": "Anthropic: Knowledge graph construction with Claude",
+      "metadata": "Published 23 March 2026; accessed 16 September 2026.",
+      "url": "https://platform.claude.com/cookbook/capabilities-knowledge-graph-guide",
+      "note": "Demonstrates extraction, resolution, graph assembly, and subgraph querying with provenance. Structured output and graph connectivity are not truth guarantees."
+    },
+    {
+      "id": "R6",
+      "type": "Primary engineering guidance",
+      "title": "Anthropic: Effective context engineering for AI agents",
+      "metadata": "Accessed 16 September 2026.",
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "note": "Supports selective context, external notes, and focused subagent contexts. This report adds its own retrieval contracts and omission-handling rules."
+    },
+    {
+      "id": "R7",
+      "type": "Primary engineering experiment",
+      "title": "Anthropic: Harness design for long-running application development",
+      "metadata": "Published 24 March 2026; accessed 16 September 2026.",
+      "url": "https://www.anthropic.com/engineering/harness-design-long-running-apps",
+      "note": "Provides a counterweight to overengineering: some scaffolding became unnecessary with stronger models; evaluator value depended on the task. Reported demos are not matched-scope causal productivity estimates."
+    },
+    {
+      "id": "R8",
+      "type": "Current product documentation",
+      "title": "Claude Code: Dynamic workflows",
+      "metadata": "Live documentation checked 16 September 2026.",
+      "url": "https://code.claude.com/docs/en/workflows",
+      "note": "Supports script-held coordination, advisory size guidelines, resumption behavior, and approval-stage limits. Availability, quotas, APIs, and exact limits require rechecking at implementation."
+    },
+    {
+      "id": "R9",
+      "type": "Current product documentation",
+      "title": "LangGraph: Persistence",
+      "metadata": "Live documentation checked 16 September 2026.",
+      "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+      "note": "Distinguishes thread checkpointers from cross-thread stores. In-memory checkpoints do not survive process restart."
+    },
+    {
+      "id": "R10",
+      "type": "Current product documentation",
+      "title": "LangGraph: Interrupts",
+      "metadata": "Live documentation checked 16 September 2026.",
+      "url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+      "note": "Documents approval pauses and that a resumed node restarts from its beginning. Used to illustrate why external effects need replay-safe design."
+    },
+    {
+      "id": "R11",
+      "type": "Primary repository",
+      "title": "Beads: agent-oriented graph issue tracking",
+      "metadata": "Current repository resolves to gastownhall/beads; checked 16 September 2026.",
+      "url": "https://github.com/gastownhall/beads",
+      "note": "Documents dependency-aware tasks, claimable work, structured output, and Dolt-backed persistence. Not an endorsement or a substitute for acceptance qualification."
+    }
+  ]
+}
