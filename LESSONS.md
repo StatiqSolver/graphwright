@@ -54,6 +54,12 @@ owner's shared memory store (cross-project). When one proves wrong, say so.
   unreliable liveness check.** Give it one call that returns a status immediately
   and own the polling in the caller. An agent turn can't hold a long-running
   process; hand those to the host (a service, a background task).
+- **Match the task shape to the builder.** (2026-08-04) A cheaper external executor
+  scored 10/10 on richly specified single-concern edits and 0/2 on repetitive edits
+  at many near-identical sites in one file: it lost track of what it had already
+  rewritten and produced a well-formed patch that silently dropped edits. Route
+  bulk sweeps to a deterministic codemod, quote target code verbatim in the brief,
+  and keep its reasoning effort low (high cost about 7x more for no gain).
 - **A subagent told "read-only" may still run destructive git.** Forbid mutating
   commands explicitly and cross-check what it claims it changed.
 - **One writer per branch. Re-read shared state right before a scarce action**
@@ -122,6 +128,13 @@ owner's shared memory store (cross-project). When one proves wrong, say so.
 - **Union merges on append-only files can keep both sides of an edited row**; check
   the merged result. And once a batch branch merges to trunk, it's dead as a merge
   target: re-check any PR still pointing at it.
+- **Agents sharing a remote can quietly adopt each other's work.** (2026-09-01) A
+  later agent on the same task can fetch and build on an earlier agent's pushed
+  branch, which ruins any "independent attempts" comparison. Detect it by
+  identical tree hashes across supposedly independent branches, and by author date
+  differing from committer date (a cherry-pick or rebase keeps the original author
+  date). Limiting each workspace's fetch to trunk reduces accidents; checking
+  afterwards is the real safeguard.
 - **Rulesets and classic branch protection are separate APIs.** "No protection
   found" from one may be a false negative. Check protection by its effect, and
   check that the bypass list is empty.
@@ -152,6 +165,12 @@ owner's shared memory store (cross-project). When one proves wrong, say so.
   (compare a served file with the one on disk), an overloaded host. Check those
   before "fixing" the test. Run browser specs against a production-style build too;
   dev servers behave differently.
+- **Run browser specs against a built app, not a dev server.** (2026-09-24)
+  Serving one static build instead of a dev server made the suite 18–29% faster
+  (per-request transforms were the bottleneck), after which the suite became
+  CPU-bound and more parallel workers stopped helping. Tests that reached app
+  internals through dev-server module URLs broke and needed a small registered
+  shim.
 - **Self-hosted runner edges:** an installer can snapshot `PATH` at configuration
   time (set it afterwards); a runner in a VM or WSL can die when its launcher exits
   (use a startup-level keep-alive); containers running as root leave root-owned
